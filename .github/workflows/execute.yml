@@ -1,0 +1,17 @@
+name: model_exec
+on: workflow_dispatch
+
+jobs:
+        job1:
+                name: data_pipeline
+                runs-on: ubuntu-latest
+                steps:
+                        - name: Checkout code
+                          uses: actions/checkout@v4
+
+                        - name: install python
+                          uses: actions/setup-python@v4
+                          with:
+                                  python-version: '3.10'
+                        - name: run the ipynb file
+                          run: jupyter execute Employee_Turnover.ipynb
